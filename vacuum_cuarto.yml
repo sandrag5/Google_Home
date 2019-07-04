@@ -1,0 +1,8 @@
+vacuum_cuarto:
+  alias: "Cuarto Pequeño"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[30261,29161,32711,32861,1]]

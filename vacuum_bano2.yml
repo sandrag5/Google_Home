@@ -1,0 +1,8 @@
+vacuum_bano2:
+  alias: "Baño Jose"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[27894,25160,29694,27760,1]]

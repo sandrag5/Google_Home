@@ -1,0 +1,27 @@
+vacuum_zonal:
+  alias: "Limpieza por zonas"
+  sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >-
+          {% if room|lower in ("comedor", "el comedor") %}
+            script.vacuum_comedor
+          {% elif room|lower in ("cuarto", "el cuarto", "el cuarto pequeño") %}
+            script.vacuum_cuarto
+          {% elif room|lower in ("pasillo de las habitaciones") %}
+            script.vacuum_pasillo3
+          {% elif room|lower in ("dormitorio") %}
+            script.vacuum_dormitorio
+          {% elif room|lower in ("baño jose", "baño de jose", "baño del comedor", "el baño del abuelo") %}
+            script.vacuum_bano2
+          {% elif room|lower in ("pasillo del baño", "pasillo") %}
+            script.vacuum_pasillo2
+          {% elif room|lower in ("baño carola", "el baño de carola", "el baño principal", "el baño de la abuela") %}
+            script.vacuum_bano1
+          {% elif room|lower in ("entrada", "la entrada") %}
+            script.vacuum_pasillo1
+          {% elif room|lower in ("cocina", "la cocina") %}
+            script.vacuum_cocina
+          {% elif room|lower in ("el salón", "el salon", "salon", "salón") %}
+            script.vacuum_salon
+          {% endif %}

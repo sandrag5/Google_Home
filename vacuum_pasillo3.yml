@@ -1,0 +1,8 @@
+vacuum_pasillo3:
+  alias: "Pasillo habitaciones"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[29308,26687,31208,28587,1]]

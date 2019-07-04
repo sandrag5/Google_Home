@@ -1,0 +1,8 @@
+vacuum_bano1:
+  alias: "Baño Carola"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[31278,27491,32878,29141,1]]
